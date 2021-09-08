@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = null;
+
+    ViewBag.Title = "SuperAdminMail";
+}
+
+@*<p> OTP for @ViewBag.Role:"@ViewBag.OTP" ;</p>*@
+
+<p>Hi,<p/>
+<p>As per your request, We have generated One Time Password For login to @ViewBag.Role .</p>
+
+<p>Your OTP : @ViewBag.OTP</p>
+
+<p>Initiated Time :  @ViewBag.issued</p>
+<p>Note: This OTP is Valid for One time Usage Only.</p>

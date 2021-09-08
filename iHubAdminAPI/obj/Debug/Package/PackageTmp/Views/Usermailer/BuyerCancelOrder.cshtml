@@ -1,0 +1,370 @@
+﻿@{
+    Layout = null;
+    var canorderdetails = ViewBag.OrderDetails as iHubDirectAPI.Models.VMOrdersModel;
+    var imgpath = System.Configuration.ConfigurationManager.AppSettings["ImgPath"].ToString();
+    var Prdctimgspath = System.Configuration.ConfigurationManager.AppSettings["Prdctimgspath"].ToString();
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- disable auto telephone linking in iOS -->
+    <title>Cancelled</title>
+    <style type="text/css">
+        /* RESET STYLES */
+        html {
+            background-color: #E1E1E1;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, #bodyTable, #bodyCell {
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+            -webkit-print-color-adjust: exact;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+            table[id=bodyTable] {
+                width: 100% !important;
+                margin: auto;
+                max-width: 600px !important;
+                color: #41424a;
+                font-weight: normal;
+            }
+
+        img, a img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            height: auto;
+            line-height: 100%;
+        }
+
+        a {
+            text-decoration: none !important;
+            border-bottom: 1px solid;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #41424a;
+            font-weight: normal;
+            font-family: Helvetica;
+            font-size: 20px;
+            line-height: 125%;
+            text-align: Left;
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            margin-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        /* table th,table td{padding: 2px 3px;} */
+
+        /* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+
+        /* ========== Page Styles ========== */
+        h1 {
+            display: block;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 100%;
+        }
+
+        h2 {
+            display: block;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 120%;
+        }
+
+        h3 {
+            display: block;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 110%;
+        }
+
+        h4 {
+            display: block;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: normal;
+            line-height: 100%;
+        }
+
+        .flexibleImage {
+            height: auto;
+        }
+
+        .linkRemoveBorder {
+            border-bottom: 0 !important;
+        }
+
+        table[class=flexibleContainerCellDivider] {
+            padding-bottom: 0 !important;
+            padding-top: 0 !important;
+        }
+
+
+        #invisibleIntroduction {
+            display: none !important;
+        }
+        /* Removing the introduction text from the view */
+
+        /*FRAMEWORK HACKS & OVERRIDES */
+        span[class=ios-color-hack] a {
+            color: #275100 !important;
+            text-decoration: none !important;
+        }
+        /* Remove all link colors in IOS (below are duplicates based on the color preference) */
+        span[class=ios-color-hack2] a {
+            color: #205478 !important;
+            text-decoration: none !important;
+        }
+
+        span[class=ios-color-hack3] a {
+            color: #8B8B8B !important;
+            text-decoration: none !important;
+        }
+
+        .a[href^="tel"], a[href^="sms"] {
+            text-decoration: none !important;
+            color: #606060 !important;
+            pointer-events: none !important;
+            cursor: default !important;
+        }
+
+        .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+            text-decoration: none !important;
+            color: #606060 !important;
+            pointer-events: auto !important;
+            cursor: default !important;
+        }
+    </style>
+</head>
+<body bgcolor="#E1E1E1" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
+        <tr>
+            <td align="center" valign="top" id="bodyCell">
+                <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin:0 auto;background-color:#fff !important;max-width:650px">
+                    <tr>
+                        <td align="left" valign="top" style="border-bottom: 1px solid #f2f4f7;">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <div style="width:152px;height:69px;">
+                                            <img src="@string.Format("{0}logo.png",imgpath)" alt="" class="flexibleImage" width="152" style="" />
+                                        </div>
+                                    </td>
+                                    <td align="left" valign="middle">
+                                        <h3 style="float:right;color: white;margin:0;line-height: 125%;font-family: Helvetica,Arial,sans-serif;text-align: left;background-color: #8BC34A;padding: 5px 10px;    border-radius: 20px 20px 20px 20px;">Status: <strong>Cancelled</strong></h3>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%;">
+                                <tr>
+                                    <td align="left" valign="top" style="padding-bottom: 0;">
+                                        <h3 style="color:#347764;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;margin-top:0;margin-bottom:3px;">Hello @ViewBag.OrderDetails.BuyerName,</h3>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <table bgcolor="#FFFFFF" class="" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">
+                                                    Based on your cancellation request,the cancellation of below listed item(s) from your order id @canorderdetails.OrderID is sucessfully cancelled.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" style="padding-bottom:0;">
+                                        <table bgcolor="#ffffff" class="" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <h3 style="line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;margin-top:0;margin-bottom:3px;">Your Order Summary <span style="color:#41424a;">( Order ID: <span style="color:#e67739;">@canorderdetails.OrderID </span> )</span></h3>
+                                                </td>
+                                                <td align="right" valign="top" style="line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;margin-top:0;margin-bottom:3px;">
+                                                    Order Date : @canorderdetails.OrderDate
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <table bgcolor="#ffffff" class="" border="1" cellpadding="3" cellspacing="0" width="100%">
+                                            <tr>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">Product</th>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">SKU</th>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">Product Name</th>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">Unit Price</th>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">Qty</th>
+                                                <th style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 15px;margin-bottom: 0;color: #41424a;line-height: 135%;">Total Price</th>
+                                            </tr>
+                                            @foreach (var prdct in canorderdetails.Products)
+                                            {
+                                               if (@prdct["Ordered_Product_Status_Id"] == "60")
+	                                            {
+                                                <tr>
+                                                    <td align="center" valign="middle" width="40">
+                                                        <div style="width:40px;height:40px;">
+                                                            <img src="@Prdctimgspath/@prdct["Image_Code"]/1.jpg" alt="" class="flexibleImage" width="40" style="" />
+                                                        </div>
+                                                    </td>
+                                                    <td style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">
+                                                        <span>@prdct["SKU"]</span>
+                                                    </td>
+                                                    <td style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">
+                                                        <span>@prdct["Product_Name"]</span>
+                                                    </td>
+                                                    <td style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">
+                                                        ₹@(prdct["Selling_Price_On_Ordered_Date"])
+                                                    </td>
+                                                    <td style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">@String.Format("{0:0.00}", prdct["Ordered_Quantity"])</td>
+                                                    <td style="text-align: center;font-family: Helvetica,Arial,sans-serif;font-size: 16px;margin-bottom: 0;color: #41424a;line-height: 135%;">₹@String.Format("{0:0.00}", prdct["TotalAmount"])</td>
+                                                </tr>
+                                                }
+                                            }
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    @*<tr>
+                            <td align="left" valign="top">
+                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td align="left" valign="top">
+                                            <table bgcolor="#ffffff" class="" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tr>
+                                                    <td align="left" valign="top">
+                                                        <h3 style="color:#347764;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;margin-top:0;margin-bottom:3px;">Delivery Address</h3>
+                                                        <p style="color:#41424a;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;margin-top:0;margin-bottom:3px;">
+                                                            Aadhya sri</br/>
+                                                            H.no:6-8-277,P.Rajaram complex</br/>
+                                                            Namdevwada,Nizamabad.</br/>
+                                                            Telangana-500081
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>*@
+
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%;">
+                                <tr>
+                                    <td align="left" valign="top" bgcolor="#347764" style="padding-bottom: 0;">
+                                        <h3 style="color:#ffffff;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:13px;font-weight:bold;margin-top:0;margin-bottom:3px;text-align:left;">For any further questions or concerns, please contact our Help Center at:</h3>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" bgcolor="#347764" style="padding-top:0;">
+                                        <table class="oddeven" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <table border="0" cellpadding="4" cellspacing="0">
+                                                        <tr>
+                                                            <td align="left" valign="middle" style="width: 24px;padding-left:0;padding-right:0;">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}phone.jpg", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                            <td style="text-align: left;font-family: Helvetica,Arial,sans-serif;font-size: 13px;margin-bottom: 0;color: #ffffff;line-height: 135%;">040-48542234</td>
+                                                            <td align="left" valign="middle" style="width: 24px;padding-right:0;">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}mail.jpg", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                            <td style="text-align: left;font-family: Helvetica,Arial,sans-serif;font-size: 13px;margin-bottom: 0;color: #ffffff;line-height: 135%;"><a href="mailto:info@ihubdirect.in" style="color: #ffffff;">info@ihubdirect.in</a></td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="right" valign="middle">
+                                                    <table border="0" cellpadding="4" cellspacing="0">
+                                                        <tr>
+                                                            <td align="left" valign="middle">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}facebook.png", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                            <td align="left" valign="middle">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}gplus.png", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                            <td align="left" valign="middle">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}twitter.png", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                            <td align="left" valign="middle">
+                                                                <div style="width:24px;height:24px;">
+                                                                    <img src="@string.Format("{0}ytube.png", imgpath)" alt="" class="flexibleImage" width="24" style="">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
